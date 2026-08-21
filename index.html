@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CHRP Technologies — QA Assessments</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-900:#0b3a3a; --teal-800:#0f4a49; --teal-700:#146664;
+    --teal-500:#2ba6a1; --teal-300:#7fd4cf; --teal-100:#e4f7f5;
+    --ink:#0c2224; --ink-soft:#4a6361; --paper:#f6faf9; --card:#ffffff; --line:#dcece9;
+    --shadow: 0 2px 10px rgba(11,58,58,0.06), 0 1px 2px rgba(11,58,58,0.05);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;min-height:100%;}
+  body{display:flex;flex-direction:column;}
+  .cover{
+    background:
+      radial-gradient(1100px 500px at 85% -10%, rgba(255,255,255,0.08), transparent 60%),
+      linear-gradient(150deg, var(--teal-900) 0%, var(--teal-800) 45%, var(--teal-700) 100%);
+    color:#eafbf9; padding:64px 24px 88px; text-align:center; position:relative; overflow:hidden;
+  }
+  .cover::after{
+    content:""; position:absolute; right:-120px; top:-140px; width:520px; height:520px; border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(125,220,213,0.30), rgba(125,220,213,0) 70%);
+  }
+  .cover-tag{
+    display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:1.6px; text-transform:uppercase;
+    color:var(--teal-300); background:rgba(125,220,213,0.12); border:1px solid rgba(125,220,213,0.35);
+    padding:6px 14px; border-radius:100px; margin-bottom:22px; position:relative; z-index:2;
+  }
+  h1{font-family:'Sora',sans-serif;font-size:38px;font-weight:800;margin:0 0 12px;color:#fff;position:relative;z-index:2;}
+  .cover p{margin:0;color:var(--teal-100);opacity:0.85;font-size:15.5px;position:relative;z-index:2;}
+  .cards{
+    max-width:860px;margin:-52px auto 0;padding:0 24px 60px;position:relative;z-index:5;
+    display:grid;grid-template-columns:1fr 1fr;gap:18px;flex:1;align-content:start;
+  }
+  a.card{
+    display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:26px 26px 22px;box-shadow:var(--shadow);text-decoration:none;color:var(--ink);
+    transition:transform .15s, box-shadow .15s;
+  }
+  a.card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,58,58,0.12);}
+  .card .num{font-family:'Sora',sans-serif;font-weight:800;font-size:13px;color:var(--teal-500);letter-spacing:0.5px;text-transform:uppercase;}
+  .card h2{font-family:'Sora',sans-serif;font-size:21px;font-weight:700;color:var(--teal-900);margin:6px 0 4px;}
+  .card .date{font-size:13px;color:var(--ink-soft);margin-bottom:16px;}
+  .card .stats{display:flex;gap:26px;border-top:1px solid var(--line);padding-top:14px;}
+  .card .stats div{display:flex;flex-direction:column;gap:2px;}
+  .card .stats .v{font-family:'Sora',sans-serif;font-weight:700;font-size:19px;color:var(--teal-800);}
+  .card .stats .l{font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.6px;}
+  .card .go{margin-top:16px;font-size:13.5px;font-weight:600;color:var(--teal-700);}
+  footer{text-align:center;padding:18px 0 30px;font-size:12px;color:var(--ink-soft);}
+  @media (max-width:680px){ .cards{grid-template-columns:1fr;} h1{font-size:30px;} }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <span class="cover-tag">Training &amp; QA Assessment</span>
+  <h1>CHRP Technologies — QA Assessments</h1>
+  <p>Results dashboards for the property inspection review knowledge checks.</p>
+</div>
+
+<div class="cards">
+  <a class="card" href="assessment-2/">
+    <div class="num">Assessment 2</div>
+    <h2>Results Dashboard</h2>
+    <div class="date">Administered August 6, 2026</div>
+    <div class="stats">
+      <div><span class="v">6</span><span class="l">Participants</span></div>
+      <div><span class="v">5.3 / 10</span><span class="l">Average</span></div>
+      <div><span class="v">6 / 10</span><span class="l">Top score</span></div>
+    </div>
+    <div class="go">View results →</div>
+  </a>
+  <a class="card" href="assessment-3/">
+    <div class="num">Assessment 3</div>
+    <h2>Results Dashboard</h2>
+    <div class="date">Administered August 20, 2026</div>
+    <div class="stats">
+      <div><span class="v">9</span><span class="l">Participants</span></div>
+      <div><span class="v">7.4 / 10</span><span class="l">Average</span></div>
+      <div><span class="v">9 / 10</span><span class="l">Top score</span></div>
+    </div>
+    <div class="go">View results →</div>
+  </a>
+</div>
+
+<footer></footer>
+
+</body>
+</html>
