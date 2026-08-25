@@ -348,18 +348,24 @@
 </div>
 
 <script>
-const IMAGES = {};
+const IMAGES = {
+  q2: "img/q2.jpg",
+  q4: "img/q4.jpg",
+  q7: "img/q7.jpg",
+  q8: "img/q8.jpg",
+  q9: "img/q9.png"
+};
 
 const QUESTIONS = [
   {n:1, short:"Reports generated when initiating repair", full:"When we initiate repair, what reports get generated?", correct:"Full, Agent, Repair Report"},
-  {n:2, short:"Manually add the valve AI missed?", full:"During QA review, AI failed to detect and annotate the shut-off valve shown in the image. Should this valve be manually added?", correct:"Yes"},
+  {n:2, img:"q2", short:"Manually add the valve AI missed?", full:"During QA review, AI failed to detect and annotate the shut-off valve shown in the image. Should this valve be manually added?", correct:"Yes"},
   {n:3, short:"Air handler image is a screen screenshot", full:"During an inspection, the air handler image received is a screenshot taken from a computer screen, and the air handler is located in the attic. What action should be taken?", correct:"Push it"},
-  {n:4, short:"Electrical panel observation", full:"Based on the electrical panel image shown, what is the correct observation?", correct:"Misplaced"},
+  {n:4, img:"q4", short:"Electrical panel observation", full:"Based on the electrical panel image shown, what is the correct observation?", correct:"Misplaced"},
   {n:5, short:"AI models on the front-of-home tile", full:"Which of the following AI models are implemented in front of home tile?", correct:"Siding, Vegetation, Trampoline"},
   {n:6, short:"Boiler uploaded instead of water heater", full:"The water heater image is missing, and a boiler image has been uploaded instead. What should be done?", correct:"Push"},
-  {n:7, short:"Which box highlights the damaged area?", full:"Which annotation box correctly highlights the damaged area shown in the image?", correct:"Blue box"},
-  {n:8, short:"Classification for the scenario (Nationwide)", full:"What classification should be added for this scenario (nationwide)?", correct:"Missing Handrills"},
-  {n:9, short:"One bathroom, bad count 0 — arrowed tile", full:"The inspection has only one bathroom, and the bad condition count is 0. What action should be taken for the following arrowed tile?", correct:"Push"},
+  {n:7, img:"q7", short:"Which box highlights the damaged area?", full:"Which annotation box correctly highlights the damaged area shown in the image?", correct:"Blue box"},
+  {n:8, img:"q8", short:"Classification for the scenario (Nationwide)", full:"What classification should be added for this scenario (nationwide)?", correct:"Missing Handrills"},
+  {n:9, img:"q9", short:"One bathroom, bad count 0 — arrowed tile", full:"The inspection has only one bathroom, and the bad condition count is 0. What action should be taken for the following arrowed tile?", correct:"Push"},
   {n:10, short:"Panel that is NOT a yellow CHRP score", full:"Which of the following electrical panels is not classified as a yellow CHRP score (nationwide)?", correct:"Federal Pacific"}
 ];
 
