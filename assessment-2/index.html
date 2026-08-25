@@ -351,11 +351,11 @@
 const IMAGES = {};
 
 const QUESTIONS = [
-  {n:1, short:"Reports generated when initiating repair", full:"When we initiate repair, what reports get generated?", correct:null},
+  {n:1, short:"Reports generated when initiating repair", full:"When we initiate repair, what reports get generated?", correct:"Full, Agent, Repair Report"},
   {n:2, short:"Manually add the valve AI missed?", full:"During QA review, AI failed to detect and annotate the shut-off valve shown in the image. Should this valve be manually added?", correct:"Yes"},
   {n:3, short:"Air handler image is a screen screenshot", full:"During an inspection, the air handler image received is a screenshot taken from a computer screen, and the air handler is located in the attic. What action should be taken?", correct:"Push it"},
   {n:4, short:"Electrical panel observation", full:"Based on the electrical panel image shown, what is the correct observation?", correct:"Misplaced"},
-  {n:5, short:"AI models on the front-of-home tile", full:"Which of the following AI models are implemented in front of home tile?", correct:null},
+  {n:5, short:"AI models on the front-of-home tile", full:"Which of the following AI models are implemented in front of home tile?", correct:"Siding, Vegetation, Trampoline"},
   {n:6, short:"Boiler uploaded instead of water heater", full:"The water heater image is missing, and a boiler image has been uploaded instead. What should be done?", correct:"Push"},
   {n:7, short:"Which box highlights the damaged area?", full:"Which annotation box correctly highlights the damaged area shown in the image?", correct:"Blue box"},
   {n:8, short:"Classification for the scenario (Nationwide)", full:"What classification should be added for this scenario (nationwide)?", correct:"Missing Handrills"},
@@ -419,6 +419,17 @@ QUESTIONS.forEach((q,i)=>{
   const div = document.createElement('div');
   div.className='q-card';
   if(q.img){ div.classList.add('has-img'); }
+
+  // Build the answer display: prefer q.correct, fall back to q.options, else show missing message
+  let answerHtml;
+  if (q.correct) {
+    answerHtml = `Correct answer: <b>${q.correct}</b>`;
+  } else if (q.options && q.options.length > 0) {
+    answerHtml = `Correct answer: <b>${q.options.join(', ')}</b>`;
+  } else {
+    answerHtml = `<b style="color:var(--bad);">No participant answered correctly</b> — answer key not included in the form export`;
+  }
+
   div.innerHTML = `
     <div class="q-top">
       <span class="q-num">Q${q.n}</span>
@@ -426,7 +437,7 @@ QUESTIONS.forEach((q,i)=>{
     </div>
     ${q.img ? `<div class="q-photo-label">Question shown with this photo — click to enlarge</div><img class="q-photo" src="${IMAGES[q.img]}" alt="Reference photo for Q${q.n}" data-img="${q.img}"/>` : ''}
     <div class="q-text">${q.full}</div>
-    <div class="q-answer">${q.correct ? `Correct answer: <b>${q.correct}</b>` : `<b style="color:var(--bad);">No participant answered correctly</b> — answer key not included in the form export`}</div>
+    <div class="q-answer">${answerHtml}</div>
     <div class="q-bar-track"><div class="q-bar-fill" style="width:${pct}%;background:${scoreColor(pct)};"></div></div>
   `;
   if(q.img){
