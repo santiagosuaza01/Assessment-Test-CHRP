@@ -348,17 +348,22 @@
 </div>
 
 <script>
-const IMAGES = {};
+const IMAGES = {
+  q1: "a3-q1.jpg",
+  q2: "a3-q2.jpg",
+  q7: "a3-q7.png",
+  q8: "a3-q8.jpg"
+};
 
 const QUESTIONS = [
-  {n:1, short:"Add this tank bolt?", full:"Should you add this tank bolt?", correct:"Yes"},
-  {n:2, short:"AI created zone 3 incorrectly", full:"During QA review, AI has created zone 3 incorrectly. What action should be taken?", correct:"Just draw one zone for the white line."},
+  {n:1, img:"q1", short:"Add this tank bolt?", full:"Should you add this tank bolt?", correct:"Yes"},
+  {n:2, img:"q2", short:"AI created zone 3 incorrectly", full:"During QA review, AI has created zone 3 incorrectly. What action should be taken?", correct:"Just draw one zone for the white line."},
   {n:3, short:"No house number, NA geolocation, no Zillow match", full:"If the homeowner does not have a house number, geolocation is marked as NA, and the house cannot be verified on Zillow, what action should be taken?", correct:"Ask CS Team"},
   {n:4, short:"What an agent report displays", full:"In an agent report, what kind of information is displayed?", correct:"Only Images"},
   {n:5, short:"How many types of CHRP score?", full:"How many types of CHRP score do we have?", correct:"3"},
   {n:6, short:"Default condition of solar & pool panels", full:"What is the default condition of the solar and pool panels?", correct:"Hidden"},
-  {n:7, short:"Water heater: what action?", full:"What action should you take for the water heater based on the following image?", correct:"Push it"},
-  {n:8, short:"Roof type shown in the image", full:"What type of roof is shown in the image?", correct:"Rolled Membrane"},
+  {n:7, img:"q7", short:"Water heater: what action?", full:"What action should you take for the water heater based on the following image?", correct:"Push it"},
+  {n:8, img:"q8", short:"Roof type shown in the image", full:"What type of roof is shown in the image?", correct:"Rolled Membrane"},
   {n:9, short:"Only a boiler image provided", full:"If the homeowner provided only a boiler image, while the water heater, AC condenser, and air handler images are missing, what action should be taken?", correct:"Push"},
   {n:10, short:"Client with solar panels as 'bad condition'", full:"For which client are solar panels marked as 'bad condition'?", correct:"FMIC"}
 ];
